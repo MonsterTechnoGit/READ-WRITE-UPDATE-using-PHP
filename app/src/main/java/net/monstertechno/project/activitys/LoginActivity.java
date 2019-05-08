@@ -1,4 +1,4 @@
-package net.monstertechno.project;
+package net.monstertechno.project.activitys;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
@@ -8,6 +8,13 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
+
+import net.monstertechno.project.MainActivity;
+import net.monstertechno.project.R;
+import net.monstertechno.project.helper.RequestHandler;
+import net.monstertechno.project.helper.SharedPrefManager;
+import net.monstertechno.project.helper.URLs;
+import net.monstertechno.project.model.User;
 
 import org.json.JSONException;
 import org.json.JSONObject;

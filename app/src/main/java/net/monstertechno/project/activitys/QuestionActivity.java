@@ -1,4 +1,4 @@
-package net.monstertechno.project;
+package net.monstertechno.project.activitys;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -18,7 +18,12 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.Volley;
 
-import net.monstertechno.ImageShowActivity;
+import net.monstertechno.project.MainActivity;
+import net.monstertechno.project.R;
+import net.monstertechno.project.helper.RequestHandler;
+import net.monstertechno.project.helper.SharedPrefManager;
+import net.monstertechno.project.helper.URLs;
+import net.monstertechno.project.model.User;
 import net.monstertechno.project.adapter.DataAdapter;
 import net.monstertechno.project.model.Data;
 
@@ -47,7 +52,7 @@ public class QuestionActivity extends AppCompatActivity {
         mList = findViewById(R.id.main_list);
 
         dataList = new ArrayList<>();
-        adapter = new DataAdapter(getApplicationContext(),dataList);
+        adapter = new DataAdapter(getApplicationContext(), dataList);
 
         linearLayoutManager = new LinearLayoutManager(this);
         linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
@@ -67,11 +72,34 @@ public class QuestionActivity extends AppCompatActivity {
         findViewById(R.id.submit_button).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(URLs.yes) {
-                    saveData(email);
-                }else {
-
-                    Toast.makeText(getApplicationContext(), "Congratulation you don't have any problem", Toast.LENGTH_SHORT).show();
+                if (URLs.yes1) {
+                    if (URLs.yes2) {
+                        if (URLs.yes3) {
+                            if (URLs.yes4) {
+                                if (URLs.yes5) {
+                                    saveData(email);
+                                } else {
+                                    Toast.makeText(getApplicationContext(), "Arthritis Not Detected", Toast.LENGTH_SHORT).show();
+                                    startActivity(new Intent(QuestionActivity.this, MainActivity.class));
+                                    finish();
+                                }
+                            } else {
+                                Toast.makeText(getApplicationContext(), "Arthritis Not Detected", Toast.LENGTH_SHORT).show();
+                                startActivity(new Intent(QuestionActivity.this, MainActivity.class));
+                                finish();
+                            }
+                        } else {
+                            Toast.makeText(getApplicationContext(), "Arthritis Not Detected", Toast.LENGTH_SHORT).show();
+                            startActivity(new Intent(QuestionActivity.this, MainActivity.class));
+                            finish();
+                        }
+                    } else {
+                        Toast.makeText(getApplicationContext(), "Arthritis Not Detected", Toast.LENGTH_SHORT).show();
+                        startActivity(new Intent(QuestionActivity.this, MainActivity.class));
+                        finish();
+                    }
+                } else {
+                    Toast.makeText(getApplicationContext(), "Arthritis Not Detected", Toast.LENGTH_SHORT).show();
                     startActivity(new Intent(QuestionActivity.this, MainActivity.class));
                     finish();
                 }
@@ -80,6 +108,7 @@ public class QuestionActivity extends AppCompatActivity {
     }
 
     ProgressDialog progressDialog;
+
     private void saveData(final String email) {
         progressDialog = new ProgressDialog(this);
         progressDialog.setMessage("Updating...");
@@ -100,7 +129,7 @@ public class QuestionActivity extends AppCompatActivity {
 
 
                 //returing the response
-                return requestHandler.sendPostRequest(URLs.URL_CHECKING, params);
+                return requestHandler.sendPostRequest(URLs.URL_UPDATERESULT, params);
             }
 
             @Override

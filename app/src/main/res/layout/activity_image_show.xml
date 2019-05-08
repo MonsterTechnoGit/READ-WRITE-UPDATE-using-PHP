@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/white"
-    tools:context="net.monstertechno.ImageShowActivity">
+    tools:context=".activitys.ImageShowActivity">
 
     <ImageView
         android:layout_width="match_parent"
@@ -16,6 +16,10 @@
         android:layout_height="wrap_content"
         android:text="Arthritis Detected"
         android:textAlignment="center"
-        android:textColor=""/>
+        android:textStyle="bold"
+        android:textSize="25dp"
+        android:layout_marginBottom="25dp"
+        android:textColor="@android:color/black"
+        android:layout_alignParentBottom="true"/>
 
 </RelativeLayout>

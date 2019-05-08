@@ -1,4 +1,4 @@
-package net.monstertechno;
+package net.monstertechno.project.activitys;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;

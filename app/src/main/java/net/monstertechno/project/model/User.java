@@ -1,9 +1,9 @@
-package net.monstertechno.project;
+package net.monstertechno.project.model;
 
 public class User {
 
     private int id;
-    private String username, email, gender;
+    private String username, email, gender,fullname,phonenumber,emphonenumber;
 
     public User(int id, String username, String email, String gender) {
         this.id = id;

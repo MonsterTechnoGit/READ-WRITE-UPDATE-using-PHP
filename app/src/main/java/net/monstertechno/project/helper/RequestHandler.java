@@ -1,4 +1,4 @@
-package net.monstertechno.project;
+package net.monstertechno.project.helper;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;

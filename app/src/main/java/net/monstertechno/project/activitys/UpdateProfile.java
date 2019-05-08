@@ -1,4 +1,4 @@
-package net.monstertechno.project;
+package net.monstertechno.project.activitys;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -8,6 +8,13 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import net.monstertechno.project.MainActivity;
+import net.monstertechno.project.R;
+import net.monstertechno.project.helper.RequestHandler;
+import net.monstertechno.project.helper.SharedPrefManager;
+import net.monstertechno.project.helper.URLs;
+import net.monstertechno.project.model.User;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -108,7 +115,7 @@ public class UpdateProfile extends AppCompatActivity {
                         SharedPrefManager.getInstance(getApplicationContext()).userLogin(user);
 
                         //starting the profile activity
-                        startActivity(new Intent(UpdateProfile.this,MainActivity.class));
+                        startActivity(new Intent(UpdateProfile.this, MainActivity.class));
                         finish();
                     } else {
                         Toast.makeText(getApplicationContext(), "Some error occurred", Toast.LENGTH_SHORT).show();

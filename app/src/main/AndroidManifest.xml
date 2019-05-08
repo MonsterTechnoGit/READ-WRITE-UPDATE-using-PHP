@@ -14,11 +14,11 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name="net.monstertechno.ImageShowActivity"></activity>
-        <activity android:name="net.monstertechno.project.UpdateProfile" />
-        <activity android:name="net.monstertechno.project.QuestionActivity" />
-        <activity android:name="net.monstertechno.project.ProfileActivity" />
-        <activity android:name="net.monstertechno.project.LoginActivity" />
+        <activity android:name=".activitys.ImageShowActivity"></activity>
+        <activity android:name="net.monstertechno.project.activitys.UpdateProfile" />
+        <activity android:name="net.monstertechno.project.activitys.QuestionActivity" />
+        <activity android:name="net.monstertechno.project.activitys.ProfileActivity" />
+        <activity android:name="net.monstertechno.project.activitys.LoginActivity" />
         <activity android:name="net.monstertechno.project.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

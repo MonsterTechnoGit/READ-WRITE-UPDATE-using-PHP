@@ -141,7 +141,7 @@ if (isset($_GET['apicall'])) {
 			echo json_encode($response);
             break;
 
-        case 'checking':
+        case 'updateresult':
 
             $checking = $_POST['checking'];
             $emailID = $_POST['email'];
@@ -170,35 +170,92 @@ if (isset($_GET['apicall'])) {
             break;
 
         case 'questions':
+        $resultout = array();
+        $conn = new mysqli($servername, $username, $password, $database);
+
+        if ($conn->connect_error) {
+            die("Connection failed: " . $conn->connect_error);
+        }
+
+        $stmt = $conn->prepare("SELECT id, question, answer_yes,answer_no, answer_one,answer_two,answer_three,answer_four FROM questions;");
+
+        $stmt->execute();
+
+        $stmt->bind_result($id,$question,$answer_yes,$answer_no,$answer_one,$answer_two,$answer_three,$answer_four);
+
+        while ($stmt->fetch()) {
+            $temp = array();
+            $temp['id']=$id;
+            $temp['question']=$question;
+            $temp['answer_yes']=$answer_yes;
+            $temp['answer_no']=$answer_no;
+            $temp['answer_one']=$answer_one;
+            $temp['answer_two']=$answer_two;
+            $temp['answer_three']=$answer_three;
+            $temp['answer_four'] = $answer_four;
+            array_push($resultout, $temp);
+        }
+
+        echo json_encode($resultout);
+
+        break;
+
+        case 'userdetails':
             $resultout = array();
+            $emailID = $_POST['email'];
             $conn = new mysqli($servername, $username, $password, $database);
 
             if ($conn->connect_error) {
                 die("Connection failed: " . $conn->connect_error);
             }
 
-            $stmt = $conn->prepare("SELECT id, question, answer_yes,answer_no, answer_one,answer_two,answer_three,answer_four FROM questions;");
+            $stmt = $conn->prepare("SELECT id, username, email,gender,fullname,phone,emphone FROM usersnew WHERE email='$emailID';");
 
             $stmt->execute();
 
-            $stmt->bind_result($id,$question,$answer_yes,$answer_no,$answer_one,$answer_two,$answer_three,$answer_four);
+            $stmt->bind_result($id,$username,$email,$gender,$fullname,$phone,$emphone);
 
             while ($stmt->fetch()) {
                 $temp = array();
                 $temp['id']=$id;
-                $temp['question']=$question;
-                $temp['answer_yes']=$answer_yes;
-                $temp['answer_no']=$answer_no;
-                $temp['answer_one']=$answer_one;
-                $temp['answer_two']=$answer_two;
-                $temp['answer_three']=$answer_three;
-                $temp['answer_four'] = $answer_four;
+                $temp['username']=$username;
+                $temp['email']=$email;
+                $temp['gender']=$gender;
+                $temp['fullname']=$fullname;
+                $temp['phone']=$phone;
+                $temp['emphone']=$emphone;
                 array_push($resultout, $temp);
             }
 
             echo json_encode($resultout);
 
             break;
+
+        case 'checking':
+            $resultout = array();
+            $emailID = $_POST['email'];
+            $conn = new mysqli($servername, $username, $password, $database);
+
+            if ($conn->connect_error) {
+                die("Connection failed: " . $conn->connect_error);
+            }
+
+            $stmt = $conn->prepare("SELECT checking FROM usersnew WHERE email='$emailID';");
+
+            $stmt->execute();
+
+            $stmt->bind_result($checking);
+
+            while ($stmt->fetch()) {
+                $temp = array();
+                $temp['checking']=$checking;
+                array_push($resultout, $temp);
+            }
+
+            echo json_encode($resultout);
+
+            break;
+
 
         default:
             $response['error'] = true;

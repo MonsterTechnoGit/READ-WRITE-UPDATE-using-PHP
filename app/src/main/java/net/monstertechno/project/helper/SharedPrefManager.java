@@ -1,8 +1,11 @@
-package net.monstertechno.project;
+package net.monstertechno.project.helper;
 
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+
+import net.monstertechno.project.model.User;
+import net.monstertechno.project.activitys.LoginActivity;
 
 /**
  * Created by Belal on 9/5/2017.
