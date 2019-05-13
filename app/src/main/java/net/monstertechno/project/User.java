@@ -1,4 +1,4 @@
-package net.simplifiedcoding.simplifiedcoding;
+package net.monstertechno.project;
 
 public class User {
 

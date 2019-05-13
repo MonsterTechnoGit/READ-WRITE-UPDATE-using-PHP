@@ -1,11 +1,85 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
     <TextView
         android:id="@+id/main_question"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Title"
+        android:padding="10dp"
+        android:layout_margin="5dp"
+        android:textColor="@android:color/black"
         android:textSize="18sp"/>
+    <RadioGroup
+        android:id="@+id/group"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_margin="5dp"
+        android:padding="10dp"
+        android:gravity="center_vertical">
+        <RadioButton
+            android:id="@+id/answer_yes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:button="@null"
+            android:drawableRight="@android:drawable/btn_radio"
+            android:text="first"
+            android:drawablePadding="20dp"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"/>
+        <RadioButton
+            android:id="@+id/answer_no"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:button="@null"
+            android:drawableRight="@android:drawable/btn_radio"
+            android:text="first"
+            android:drawablePadding="20dp"
+            android:textColor="@android:color/black"
+            android:textSize="18sp" />
+        <RadioButton
+            android:id="@+id/answer_one"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:button="@null"
+            android:drawableRight="@android:drawable/btn_radio"
+            android:text="first"
+            android:drawablePadding="20dp"
+            android:textColor="@android:color/black"
+            android:textSize="18sp" />
+        <RadioButton
+            android:id="@+id/answer_two"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:button="@null"
+            android:drawableRight="@android:drawable/btn_radio"
+            android:text="first"
+            android:drawablePadding="20dp"
+            android:textColor="@android:color/black"
+            android:textSize="18sp" />
+        <RadioButton
+            android:id="@+id/answer_three"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:button="@null"
+            android:drawableRight="@android:drawable/btn_radio"
+            android:text="first"
+            android:drawablePadding="20dp"
+            android:textColor="@android:color/black"
+            android:textSize="18sp" />
+        <RadioButton
+            android:id="@+id/answer_four"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:button="@null"
+            android:drawableRight="@android:drawable/btn_radio"
+            android:text="first"
+            android:drawablePadding="20dp"
+            android:textColor="@android:color/black"
+            android:textSize="18sp" />
+    </RadioGroup>
+
 </LinearLayout>

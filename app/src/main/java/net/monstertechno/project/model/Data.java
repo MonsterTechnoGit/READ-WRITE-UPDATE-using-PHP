@@ -1,4 +1,4 @@
-package net.simplifiedcoding.simplifiedcoding.model;
+package net.monstertechno.project.model;
 
 public class Data {
 

@@ -1,4 +1,4 @@
-package net.simplifiedcoding.simplifiedcoding;
+package net.monstertechno.project;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
