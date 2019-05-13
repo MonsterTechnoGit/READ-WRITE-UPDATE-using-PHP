@@ -3,7 +3,7 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion 28
     defaultConfig {
-        applicationId "net.simplifiedcoding.simplifiedcoding"
+        applicationId "net.monstertechno.project"
         minSdkVersion 22
         targetSdkVersion 28
         versionCode 1

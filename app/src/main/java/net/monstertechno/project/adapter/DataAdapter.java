@@ -38,7 +38,7 @@ public class DataAdapter extends RecyclerView.Adapter<DataAdapter.ViewHolder> {
         Data data = list.get(position);
         holder.question.setText(data.getQuestions());
 
-        
+
 
         if(data.getAnswer_yes().equals("null")){
             holder.yes.setVisibility(View.GONE);
