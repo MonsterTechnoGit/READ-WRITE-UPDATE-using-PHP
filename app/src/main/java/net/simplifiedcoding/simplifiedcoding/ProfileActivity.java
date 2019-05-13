@@ -53,5 +53,12 @@ public class ProfileActivity extends AppCompatActivity {
                 startActivity(new Intent(ProfileActivity.this,UpdateProfile.class));
             }
         });
+
+        findViewById(R.id.buttonCheck).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(ProfileActivity.this,QuestionActivity.class));
+            }
+        });
     }
 }

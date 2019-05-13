@@ -1,9 +1,9 @@
 <?php
 
-$servername = "localhost";
-$username = "astroano_wp861";
-$password = "2&J?hh_5(Kj1";
-$database = "astroano_wp861";
+$servername = "fdb20.awardspace.net";
+$username = "3044752_entc";
+$password = "zxcvbnm@123";
+$database = "3044752_entc";
 
 
 //creating a new connection object using mysqli
@@ -166,6 +166,33 @@ if (isset($_GET['apicall'])) {
             break;
 
         case 'questions':
+            $resultout = array();
+            $conn = new mysqli($servername, $username, $password, $database);
+
+            if ($conn->connect_error) {
+                die("Connection failed: " . $conn->connect_error);
+            }
+
+            $stmt = $conn->prepare("SELECT id, question, answer_yes,answer_no, answer_one,answer_two,answer_three,answer_four FROM questions;");
+
+            $stmt->execute();
+
+            $stmt->bind_result($id,$question,$answer_yes,$answer_no,$answer_one,$answer_two,$answer_three,$answer_four);
+
+            while ($stmt->fetch()) {
+                $temp = array();
+                $temp['id']=$id;
+                $temp['question']=$question;
+                $temp['answer_yes']=$answer_yes;
+                $temp['answer_no']=$answer_no;
+                $temp['answer_one']=$answer_one;
+                $temp['answer_two']=$answer_two;
+                $temp['answer_three']=$answer_three;
+                $temp['answer_four'] = $answer_four;
+                array_push($resultout, $temp);
+            }
+
+            echo json_encode($resultout);
 
             break;
 
@@ -179,7 +206,6 @@ if (isset($_GET['apicall'])) {
     $response['message'] = 'Invalid API Call';
 }
 
-echo json_encode($response);
 
 function isTheseParametersAvailable($params)
 {
