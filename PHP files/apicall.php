@@ -69,6 +69,7 @@ if (isset($_GET['apicall'])) {
                 $response['message'] = 'required parameters are not available';
             }
 
+			echo json_encode($response);
             break;
 
         case 'login':
@@ -106,6 +107,7 @@ if (isset($_GET['apicall'])) {
                     $response['message'] = 'Invalid username or password';
                 }
             }
+			echo json_encode($response);
             break;
 
         case 'update':
@@ -136,6 +138,7 @@ if (isset($_GET['apicall'])) {
                 $response['error'] = false;
                 $response['message'] = 'required parameters are not available';
             }
+			echo json_encode($response);
             break;
 
         case 'checking':
@@ -162,6 +165,7 @@ if (isset($_GET['apicall'])) {
                     $response['message'] = 'Something went wrong';
                 }
             }
+			echo json_encode($response);
 
             break;
 

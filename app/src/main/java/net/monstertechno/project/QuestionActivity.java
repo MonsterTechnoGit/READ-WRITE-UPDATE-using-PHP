@@ -72,7 +72,7 @@ public class QuestionActivity extends AppCompatActivity {
                 }else {
 
                     Toast.makeText(getApplicationContext(), "Congratulation you don't have any problem", Toast.LENGTH_SHORT).show();
-                    startActivity(new Intent(QuestionActivity.this, ImageShowActivity.class));
+                    startActivity(new Intent(QuestionActivity.this, MainActivity.class));
                     finish();
                 }
             }

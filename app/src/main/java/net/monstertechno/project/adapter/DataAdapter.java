@@ -106,11 +106,11 @@ public class DataAdapter extends RecyclerView.Adapter<DataAdapter.ViewHolder> {
                     switch (index) {
                         case 0: // first button
                             URLs.yes = true;
-                            Toast.makeText(context, URLs.yes.toString(), Toast.LENGTH_SHORT).show();
+
                             break;
                         case 1: // secondbutton
                             URLs.yes = false;
-                            Toast.makeText(context, URLs.yes.toString(), Toast.LENGTH_SHORT).show();
+
                             break;
                     }
                 }
